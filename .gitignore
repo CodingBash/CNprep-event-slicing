@@ -1,0 +1,4 @@
+*.tsv
+*.RData
+*.Rhistory
+output/
