@@ -7,7 +7,7 @@ mastcols<-
 	c("start","end","chrom","median","error","gstart","gend","amps","dels")
 
 samples <- load_samples(classes = c("T"), sampleList = "resources/meta/sampleList.csv")
-dir <- "resources/prev_run_7_27_2018_3/"
+dir <- "resources/prev_run_7_27_2018_4/"
 
 segtables <- lapply(samples, function(sample){
 		tryCatch({
@@ -17,11 +17,13 @@ segtables <- lapply(samples, function(sample){
 	})
 raw_htprep <- do.call(rbind, segtables)
 
+#
+# Convert appopriate columns to numeric
+#
 num_data <- data.frame(data.matrix(raw_htprep))
 numeric_columns <- sapply(num_data,function(x){mean(as.numeric(is.na(x)))<0.5})
 htprep <- data.frame(num_data[,numeric_columns], raw_htprep[,!numeric_columns])
 htprep$chrom <- raw_htprep$chrom
-print(str(htprep$chrom))
 
 htprep[htprep[,"chrom"]=="X","chrom"]<-"23"
 htprep[htprep[,"chrom"]=="Y","chrom"]<-"24"

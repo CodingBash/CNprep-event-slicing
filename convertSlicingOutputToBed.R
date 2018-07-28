@@ -1,6 +1,5 @@
-setwd("~/Git-Projects/Git-Research-Projects/CNprep-event-slicing/")
+# setwd("~/Git-Projects/Git-Research-Projects/CNprep-event-slicing/")
 source("helperFunctions.R")
-source("coreGenerationLibrary.R")
 
 table <- read.table("output/organoidSlices.txt", sep = "\t", header = TRUE)
 chromosomeSizes <- readRDS("resources/meta/chromosomeSizes.rds")
