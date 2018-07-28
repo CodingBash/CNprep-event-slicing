@@ -1,0 +1,5 @@
+UGE JOB SUBMISSION NOTES FOR segmentClusteringHPC.R
+User description of job:  Default parameters. Cutoff on norminput length 10000000
+The script centers the input segments and clusters the segments using GMM
+The output files wrote to:  prev_run_7_27_2018_6
+This input parameters used mclust_model = E and minjoin = 0.25 and ntrial= 10
