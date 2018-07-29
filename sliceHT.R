@@ -7,7 +7,7 @@ mastcols<-
 	c("start","end","chrom","median","error","gstart","gend","amps","dels")
 
 samples <- load_samples(classes = c("T", "M", "F"), sampleList = "resources/meta/sampleList.csv")
-dir <- "resources/prev_run_7_27_2018_6/"
+dir <- "resources/prev_run_7_27_2018_8/"
 
 segtables <- lapply(samples, function(sample){
 		tryCatch({
