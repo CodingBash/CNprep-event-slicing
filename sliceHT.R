@@ -6,8 +6,8 @@ chromrange<-1:22
 mastcols<-
 	c("start","end","chrom","median","error","gstart","gend","amps","dels")
 
-samples <- load_samples(classes = c("T", "M", "F"), sampleList = "resources/meta/sampleList.csv")
-dir <- "resources/prev_run_7_27_2018_8/"
+samples <- load_samples(classes = c("T", "F", "M"), sampleList = "resources/meta/sampleList.csv")
+dir <- "resources/prev_run_8_2_2018_3/"
 
 segtables <- lapply(samples, function(sample){
 		tryCatch({
@@ -72,7 +72,7 @@ for(i in 1:length(unames)){
 		gend<-a[match(aslices[,"end"],a[,"end"]),"gend"]
 		jointaslices<-rbind(jointaslices,cbind(aslices,gstart,gend))
 	}
-  dslices<-make.mounds(mastneg,i,inflate=2,mysign=-1)
+ 	 dslices<-make.mounds(mastneg,i,inflate=2,mysign=-1)
 	if(nrow(dslices)>0){
 		gstart<-a[match(dslices[,"start"],a[,"start"]),"gstart"]
 		gend<-a[match(dslices[,"end"],a[,"end"]),"gend"]
